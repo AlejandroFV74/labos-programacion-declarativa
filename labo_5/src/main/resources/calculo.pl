@@ -33,3 +33,11 @@ s(Var, Var, 1/2*Var^2) :-
 % Integral de una constante por una variable elevada a la N
 s(Var, K*Var^N, K/M*Var^M) :-
     atomic(Var), number(K), number(N), is(M, N+1).
+
+% Suma de dos numeros
+suma(A, B, R) :-
+    number(A), number(B), R is A + B.
+
+% Resta de dos numeros
+resta(A, B, R) :-
+    number(A), number(B), R is A - B.

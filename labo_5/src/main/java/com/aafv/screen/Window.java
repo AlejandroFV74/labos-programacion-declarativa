@@ -2,6 +2,7 @@ package com.aafv.screen;
 
 
 import com.aafv.Connection;
+import com.aafv.screen.components.PanelOperaciones;
 import com.aafv.screen.components.PanelResult;
 import com.aafv.screen.components.TextField;
 import com.aafv.screen.components.Buttons;
@@ -46,7 +47,8 @@ public class Window extends JFrame {
         agregar(contenido, crearEjemplos(), 18);
         agregar(contenido, crearBotones(motor), 22);
         agregar(contenido, panelResultado, 10);
-        agregar(contenido, crearPie(), 0);
+        agregar(contenido, crearPie(), 20);
+        agregar(contenido, new PanelOperaciones(motor), 0);    // nuevo
 
         JPanel raiz = new JPanel(new BorderLayout(0, 20));
         raiz.setBackground(Theme.BG);

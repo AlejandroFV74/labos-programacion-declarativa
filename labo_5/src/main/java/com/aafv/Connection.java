@@ -22,4 +22,10 @@ public class Connection {
         return info.isSuccess() ? info.getTerm("R").toString()
                 : "Sin solución para esa expresión";
     }
+
+    public String operar(String predicado, String a, String b) throws Exception {
+        SolveInfo info = engine.solve(predicado + "(" + a + ", " + b + ", R).");
+        return info.isSuccess() ? info.getTerm("R").toString()
+                : "Sin solución";
+    }
 }
