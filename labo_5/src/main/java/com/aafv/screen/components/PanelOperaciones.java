@@ -19,7 +19,8 @@ public class PanelOperaciones extends JPanel {
 
     private final TextField txtA = new TextField("A");
     private final TextField txtB = new TextField("B");
-    private final JLabel lblResultado = new JLabel(" ");
+    //private final JLabel lblResultado = new JLabel(" ");
+    private final PanelResult panelResultado = new PanelResult(2);
 
     public PanelOperaciones(Connection motor) {
         setOpaque(false);
@@ -46,15 +47,13 @@ public class PanelOperaciones extends JPanel {
         fila.add(btnSumar);
         fila.add(btnRestar);
 
-        lblResultado.setFont(Theme.mono(Font.PLAIN, 17));
-        lblResultado.setForeground(Theme.TEXT);
-        lblResultado.setAlignmentX(Component.LEFT_ALIGNMENT);
+        panelResultado.setAlignmentX(Component.LEFT_ALIGNMENT);
 
         add(titulo);
         add(javax.swing.Box.createVerticalStrut(6));
         add(fila);
         add(javax.swing.Box.createVerticalStrut(10));
-        add(lblResultado);
+        add(panelResultado);
     }
 
     private void ejecutar(Connection motor, String pred, String simbolo) {
@@ -74,7 +73,7 @@ public class PanelOperaciones extends JPanel {
     }
 
     private void mostrar(String texto, Color color) {
-        lblResultado.setText(texto);
-        lblResultado.setForeground(color);
+        panelResultado.setTexto(texto);
+        panelResultado.setForeground(color);
     }
 }

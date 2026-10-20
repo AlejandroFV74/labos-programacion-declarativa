@@ -9,8 +9,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
-import java.awt.BorderLayout;
-import java.awt.Font;
+import java.awt.*;
 
 public class PanelResult extends JPanel {
 
@@ -18,6 +17,11 @@ public class PanelResult extends JPanel {
     private final JTextArea txtResultado = new JTextArea(4, 30);
 
     public PanelResult() {
+        this(4);
+    }
+
+
+    public PanelResult(int filas) {
         super(new BorderLayout(0, 6));
         setOpaque(false);
 
@@ -48,6 +52,11 @@ public class PanelResult extends JPanel {
     public void setTexto(String texto) {
         txtResultado.setText(texto);
     }
+
+    public void setColorTexto(Color color) {
+        txtResultado.setForeground(color);
+    }
+
 
     public String getTexto() {
         return txtResultado.getText();
